@@ -27,6 +27,27 @@ function alienToRoman(alienNumber) {
   return roman;
 }
 
+function romanToNumber(roman) {
+  var number = 0;
+  for(var i = 0;i < roman.length; i++) {
+    var actual = mapRomanToNumber[roman[i]];
+    var next = mapRomanToNumber[roman[i+1]];
+
+    if(next == undefined) {
+      next = 0;
+    }
+    if (actual >= next) {
+      number += actual;
+    } else {
+      number -= actual;
+    }
+  }
+  return number
+}
+
 function getAmountInCredits(quotation, alienNumber) {
-  console.log(alienToRoman("isk isk isk"));
+  var roman = alienToRoman(alienNumber);
+  var sum = romanToNumber(roman);
+  console.log("ROMAN: "+roman);
+  console.log("SUM: "+sum);
 }
