@@ -48,6 +48,13 @@ function romanToNumber(roman) {
 function getAmountInCredits(quotation, alienNumber) {
   var roman = alienToRoman(alienNumber);
   var sum = romanToNumber(roman);
-  console.log("ROMAN: "+roman);
-  console.log("SUM: "+sum);
+  return(quotation * sum);
+}
+
+function test() {
+  console.log(getAmountInCredits(1, 'isk isk'));
+  console.log(getAmountInCredits(2, 'isk isk'));
+  console.log(getAmountInCredits(3.14, 'isk isk'));
+  console.log(getAmountInCredits(1.2, 'isk vev'));
+  console.log(getAmountInCredits(1.2, 'isk not'));
 }
