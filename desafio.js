@@ -17,3 +17,16 @@ var mapRomanToNumber = {
   "D": 500,
   "M": 1000
 }
+
+function alienToRoman(alienNumber) {
+  var roman = "";
+  var list = alienNumber.split(' ');
+  for(var i = 0; i < list.length; i++) {
+    roman += mapAlienToRoman[list[i]];
+  }
+  return roman;
+}
+
+function getAmountInCredits(quotation, alienNumber) {
+  console.log(alienToRoman("isk isk isk"));
+}
